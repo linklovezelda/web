@@ -1,0 +1,457 @@
+/* 轮播图 */
+
+.meizu-banner img {
+    width: 1536px;
+    height: 600px;
+}
+
+
+/* 活动展示 */
+
+.section-box {
+    width: 100%;
+    height: 277px;
+    margin: 30px 30px;
+}
+
+.section-box .section-box-adv {
+    width: 1519px;
+    height: 277px;
+    float: left;
+    margin: 0 auto;
+}
+
+.section-box .adv-box1,
+.section-box .adv-box2 {
+    width: 310px;
+    height: 186px;
+    float: left;
+    overflow: hidden;
+    margin-left: 40px;
+    text-align: center
+}
+
+.section-box .adv-box3,
+.section-box .adv-box4 {
+    float: right;
+    width: 310px;
+    height: 186px;
+    overflow: hidden;
+    margin-right: 40px;
+    text-align: center
+}
+
+.section-box .adv-box1 b,
+.section-box .adv-box2 b,
+.section-box .adv-box3 b,
+.section-box .adv-box4 b {
+    font-size: 1.5em;
+    color: #333;
+    text-decoration: none
+}
+
+.section-box .adv-box1 p,
+.section-box .adv-box2 p,
+.section-box .adv-box3 p,
+.section-box .adv-box4 p {
+    color: #999;
+    text-decoration: none;
+}
+
+.section-box .box-img {
+    width: 310px;
+    height: 186px;
+}
+
+.section-box .box-img img {
+    width: 130px;
+    height: 130px;
+}
+
+
+/* 魅族手机 */
+
+.meizu-main .meizu-main-top {
+    background-color: #f4f4f4;
+}
+
+h3 {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.big-pic img {
+    /* width: 100%;
+	height: 450px; */
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+
+
+/* 手机列表 */
+
+.meizu-main-phone-list {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.big {
+    background-color: white;
+    text-align: center;
+    margin: 5px;
+    width: 615px;
+    height: 610px;
+    overflow: hidden;
+    position: relative;
+}
+
+.big img {
+    width: 460px;
+    height: 460px;
+}
+
+
+/* 手机信息 */
+
+.box-info {
+    margin-top: 20px;
+}
+
+.box-info .goods-name {
+    font-size: 28px;
+    color: #333333;
+}
+
+.box-info .goods-desc {
+    font-size: 18px;
+    color: #333333;
+}
+
+.box-info .goods-price {
+    font-size: 22px;
+    color: #cc0000;
+}
+
+.ball {
+    width: 60px;
+    height: 60px;
+    border: 1px solid pink;
+    border-radius: 50%;
+    background-image: linear-gradient(120deg, #ff3149, #ff64a6);
+    color: white;
+    margin-left: 10px;
+    position: absolute;
+    left: 30px;
+    margin-top: 15px;
+}
+
+.ball-blue {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: linear-gradient(120deg, #2e74f6, #56bdf9);
+    color: white;
+    margin-left: 10px;
+    margin-top: 15px;
+    position: absolute;
+    left: 30px;
+}
+
+.big .ball a {
+    color: white
+}
+
+.big1 {
+    float: left;
+    margin: 5px;
+    margin-left: 138px;
+}
+
+.big2 {
+    float: right;
+    margin: 5px;
+    margin-right: 138px;
+}
+
+.small {
+    width: 303px;
+    height: 375px;
+    display: block;
+    position: relative;
+}
+
+.small .goods-name {
+    font-size: 16px;
+}
+
+.small .goods-desc {
+    font-size: 14px;
+    color: #999999;
+}
+
+.small .goods-price {
+    font-size: 22px;
+}
+
+.small .goods-price s {
+    font-size: 14px;
+    color: #666666;
+    text-decoration-line: line-through;
+}
+
+.small img {
+    width: 230px;
+    height: 230px;
+}
+
+.list-bottom {
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.list-bottom .small {
+    background-color: white;
+    margin: 0 auto
+}
+
+.list-bottom .small a {
+    color: white
+}
+
+.list-bottom .small1 {
+    float: left;
+    margin: 5px;
+    margin-left: 138px;
+}
+
+.list-bottom .small2 {
+    float: left;
+    margin: 5px
+}
+
+.list-bottom .small3 {
+    float: left;
+    margin: 5px
+}
+
+.list-bottom .small4 {
+    float: left;
+    margin: 5px;
+    margin-right: 95px;
+}
+
+.list-bottom .small5 {
+    float: left;
+    margin: 5px;
+    margin-left: 138px;
+}
+
+.list-bottom .small6 {
+    float: left;
+    margin: 5px;
+}
+
+.list-bottom .small7 {
+    float: left;
+    margin: 5px;
+}
+
+.list-bottom .small8 {
+    float: left;
+    margin: 5px;
+    margin-right: 95px;
+}
+
+.first-pic {
+    position: relative;
+    width: 303px;
+    height: 375px;
+    /* text-align: center;
+	margin: 0 auto; */
+}
+
+.first-pic .box-info {
+    position: absolute;
+    top: 250px;
+    left: 70px;
+    overflow: hidden
+}
+
+.first-pic .goods-name {
+    font-size: 21px;
+    color: #ffffff;
+    font-weight: bolder
+}
+
+.first-pic .goods-desc {
+    font-size: 14px;
+    color: white;
+}
+
+.first-pic .goods-price {
+    font-size: 24px;
+    color: #6ad0c4;
+}
+
+
+/* 魅族声学 */
+
+
+/* 图片等比缩放 */
+
+.meizu-main-headphone img {
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+
+.meizu-main-headphone .img {
+    width: 303px;
+    height: 375px;
+}
+
+.first-pic1 {
+    background: url(../img/34638573-cabf-41c9-919c-d6d20e3d211f.jpg)
+}
+
+.first-pic2 {
+    background: url(../img/c670037c-d423-43b4-945d-c41a973c3a8e.jpg)
+}
+
+.first-pic3 {
+    background: url(../img/5c6f84a6-9883-4e27-a935-4d10b171360e.jpg)
+}
+
+.first-pic4 {
+    background: url(../img/01782af6-5c38-4f95-b2aa-0e0e680ad054.png)
+}
+
+.first-pic5 {
+    background: url(../img/5370aa79-9b77-4b43-b37b-1dace18d4efa.jpg)
+}
+
+.first-pic6 {
+    background: url(../img/c616d3eb-874d-4ff8-944c-af9ac3e65c68.jpg)
+}
+
+.first-pic7 {
+    background: url(../img/5c9e0f3b-2c17-4578-825b-7a138fc5127f.jpg)
+}
+
+.first-pic8 {
+    background: url(../img/011c8745-9eb9-47b7-b6b1-97c98f7dcdf0.jpg)
+}
+
+
+/* 魅族社区帖子 */
+
+.bbs {
+    width: 303px;
+    height: 388px;
+    position: relative;
+}
+
+.bbs .bbs-user span,
+.bbs .bbs-user p {
+    color: #515151;
+}
+
+.bbs img {
+    width: 303px;
+    height: 190px;
+}
+
+.bbs-user img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.bbs-user span {
+    position: absolute;
+    top: 15px;
+    left: 80px;
+}
+
+.user-info {
+    position: relative
+}
+
+.user-info p {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    color: #515151;
+}
+
+.user-info .comment-tip {
+    position: absolute;
+    top: 170px;
+    left: 20px;
+    color: #515151;
+}
+
+
+/* flyme版块 */
+
+.flyme .big-flyme {
+    width: 615px;
+    height: 375px;
+}
+
+.flyme .big-flyme img {
+    width: 615px;
+    height: 244px;
+}
+
+.flyme {
+    position: relative;
+    width: 303px;
+    height: 244px;
+}
+
+.flyme img {
+    width: 303px;
+    height: 190px;
+}
+
+.flyme p {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    color: #515151;
+    top: 200px;
+    left: 100px;
+    font-size: 16px;
+}
+
+
+/* 视频版块 */
+
+.video {
+    position: relative;
+    width: 303px;
+    height: 244px;
+}
+
+.video img {
+    width: 303px;
+    height: 190px;
+}
+
+.video p {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    color: #515151;
+    top: 200px;
+    left: 100px;
+    font-size: 16px;
+    margin: 0 auto;
+}

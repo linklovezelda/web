@@ -1,0 +1,78 @@
+.footer-box {
+    width: 100%;
+    background-color: #ffffff;
+    margin-top: 50px;
+}
+
+.meizu-service .ser p {
+    font-size: 12px;
+    color: #999999;
+}
+
+.meizu-service .ser i {
+    font-size: 50px;
+    color: #999999;
+}
+
+.ser {
+    margin: 50px;
+    text-align: center;
+}
+
+.online-service {
+    /* width: 155px;
+	height: 102px; */
+    float: right
+}
+
+.online-service .p1 {
+    font-size: 12px;
+    color: #999999;
+}
+
+.online-service .p2 {
+    font-size: 25px;
+    color: #00c3f5
+}
+
+.online-service .p3 {
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+    background-color: #0bbbef;
+    border: 1px solid #0bbbef;
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: middle;
+    color: #ffffff;
+}
+
+.meizu-service-bottom {
+    float: right;
+    margin: 0 400px 0 80px;
+}
+
+.meizu-service-bottom li {
+    float: left;
+    text-align: center;
+}
+
+.meizu-service-bottom li a {
+    font-size: 12px;
+    color: #999999;
+}
+
+.meizu-service-bottom:hover li a {
+    color: #00c3f5;
+}
+
+.last {
+    margin: 0 300px 0 70px;
+}
+
+.last li p {
+    float: left;
+    margin: 10px;
+    font-size: 12;
+    color: #999999;
+}

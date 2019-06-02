@@ -1,0 +1,26 @@
+   * {
+       margin: 0;
+       padding: 0;
+   }
+   
+   a {
+       text-decoration-line: none
+   }
+   
+   a:-webkit-any-link {
+       color: -webkit-link;
+       cursor: pointer;
+       text-decoration: none;
+   }
+   
+   li {
+       list-style: none;
+   }
+   
+   html {
+       background-color: #f4f4f4;
+   }
+   
+   body {
+       background-color: #f4f4f4;
+   }
