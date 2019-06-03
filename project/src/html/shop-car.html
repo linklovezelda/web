@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>魅族购物车</title>
+
+    <link href="../css/shop-car.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/magnifier.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/iconfont/font_dv5f0ekaz5l/iconfont.css">
+    <link rel="stylesheet" href="../css/selectable.css">
+    <link rel="stylesheet" href="../css/sec.css">
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/Calculation.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            //jquery特效制作复选框全选反选取消(无插件)
+            // 全选        
+            $(".allselect").click(function() {
+
+                if ($(this).attr("checked")) {
+                    $(".gwc_tb2 input[name=newslist]").each(function() {
+                        $(this).attr("checked", true);
+                        // $(this).next().css({ "background-color": "#3366cc", "color": "#ffffff" });
+                    });
+                    GetCount();
+
+                } else {
+                    $(".gwc_tb2 input[name=newslist]").each(function() {
+                        if ($(this).attr("checked")) {
+                            $(this).attr("checked", false);
+                            //$(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+                        } else {
+                            $(this).attr("checked", true);
+                            //$(this).next().css({ "background-color": "#3366cc", "color": "#000000" });
+                        }
+                    });
+                    GetCount();
+
+                }
+
+            });
+
+            //反选
+            $("#invert").click(function() {
+                $(".gwc_tb2 input[name=newslist]").each(function() {
+                    if ($(this).attr("checked")) {
+                        $(this).attr("checked", false);
+                        //$(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+                    } else {
+                        $(this).attr("checked", true);
+                        //$(this).next().css({ "background-color": "#3366cc", "color": "#000000" });
+                    }
+                });
+                GetCount();
+            });
+
+            //取消
+            $("#cancel").click(function() {
+                $(".gwc_tb2 input[name=newslist]").each(function() {
+                    $(this).attr("checked", false);
+                    // $(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+                });
+                GetCount();
+            });
+
+            // 所有复选(:checkbox)框点击事件
+            $(".gwc_tb2 input[name=newslist]").click(function() {
+                if ($(this).attr("checked")) {
+                    //$(this).next().css({ "background-color": "#3366cc", "color": "#ffffff" });
+                } else {
+                    // $(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+                }
+            });
+
+            // 输出
+            $(".gwc_tb2 input[name=newslist]").click(function() {
+                // $("#total2").html() = GetCount($(this));
+                GetCount();
+                //alert(conts);
+            });
+        });
+        //******************
+        function GetCount() {
+            var conts = 0;
+            var aa = 0;
+            $(".gwc_tb2 input[name=newslist]").each(function() {
+                if ($(this).attr("checked")) {
+                    for (var i = 0; i < $(this).length; i++) {
+                        conts += parseInt($(this).val());
+                        aa += 1;
+                    }
+                }
+            });
+            $("#shuliang").text(aa);
+            $("#zong1").html((conts).toFixed(2));
+            $("#jz1").css("display", "none");
+            $("#jz2").css("display", "block");
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <div class="shop-header">
+        <ul class="meizu-logo" style="float:left;margin: 30px">
+            <li>
+                <a href="#" class="meizu-header-logo-img">
+                    <i class="iconfont icon-meizu" style="color:#0bbbef"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav-left" style="margin-left: 100px">
+            <li style="float:left;margin: 30px "><a style="color:#515151">购物车</a>&nbsp;&nbsp;></li>
+            <li style="float:left;margin: 30px "><a style="color:#515151">确认订单</a>&nbsp;></li>
+            <li style="float:left;margin: 30px "><a style="color:#515151">在线支付</a>&nbsp;></li>
+            <li style="float:left;margin: 30px "><a style="color:#515151">完成</a>&nbsp;></li>
+        </ul>
+        <ul class="nav-right" style="float: right;">
+            <li style="float:left;margin: 30px "><a style="color:#515151">我的订单</a></li>
+            <li style="float:left;margin: 30px "><a style="color:#515151">登录</a></li>
+            <li style="float:left;margin: 30px "><a style="color:#515151">注册</a></li>
+        </ul>
+    </div>
+    <div class="gwc" style=" margin:auto;width: 1240px">
+        <table cellpadding="0" cellspacing="0" class="gwc_tb1">
+            <tr>
+                <td class="tb1_td1"><input id="Checkbox1" type="checkbox" class="allselect" /></td>
+                <td class="tb1_td1">全选</td>
+                <td class="tb1_td3">商品</td>
+                <td class="tb1_td4">商品信息</td>
+                <td class="tb1_td5">数量</td>
+                <td class="tb1_td6">单价</td>
+                <td class="tb1_td7">操作</td>
+            </tr>
+        </table>
+
+        <!---商品加减算总数---->
+        <script type="text/javascript">
+            $(function() {
+                var t = $("#text_box1");
+                $("#add1").click(function() {
+                    t.val(parseInt(t.val()) + 1)
+                    setTotal();
+                    GetCount();
+                })
+                $("#min1").click(function() {
+                    if (t.val() > 0) {
+                        t.val(parseInt(t.val()) - 1)
+                        setTotal();
+                        GetCount();
+                    }
+                })
+
+                function setTotal() {
+
+                    $("#total1").html((parseInt(t.val()) * 3198).toFixed(2));
+                    $("#newslist-1").val(parseInt(t.val()) * 3198);
+                }
+                setTotal();
+            })
+        </script>
+
+        <table cellpadding="0" cellspacing="0" class="gwc_tb2">
+            <tr>
+                <td class="tb2_td1"><input type="checkbox" value="1" name="newslist" id="newslist-1" /></td>
+                <td class="tb2_td2">
+                    <a href="#"><img src="../img/Cgbj0FzvRJOAH5vQAAP_QK7Ul4k243.png120x120.jpg" /></a>
+                </td>
+                <td class="tb2_td3"><a href="#">魅族16s</a></td>
+                <td class="tb1_td4">1</td>
+                <td class="tb1_td5">
+                    <input id="min1" name="" style=" width:20px; height:18px;border:1px solid #ccc;" type="button" value="-" />
+                    <input id="text_box1" name="" type="text" value="1" style=" width:30px; text-align:center; border:1px solid #ccc;" />
+                    <input id="add1" name="" style=" width:20px; height:18px;border:1px solid #ccc;" type="button" value="+" />
+                </td>
+                <td class="tb1_td6"><label id="total1" class="tot" style="color:#ff5500;font-size:14px; font-weight:bold;"></label></td>
+                <td class="tb1_td7"><a href="#">删除</a></td>
+            </tr>
+        </table>
+
+        <!---商品加减算总数---->
+        <script type="text/javascript">
+            $(function() {
+                var t = $("#text_box2");
+                $("#add2").click(function() {
+                    t.val(parseInt(t.val()) + 1)
+                    setTotal();
+                    GetCount();
+                })
+                $("#min2").click(function() {
+                    if (t.val() > 0) {
+                        t.val(parseInt(t.val()) - 1)
+                        setTotal();
+                        GetCount();
+                    }
+                })
+
+                function setTotal() {
+
+                    $("#total2").html((parseInt(t.val()) * 2998).toFixed(2));
+                    $("#newslist-2").val(parseInt(t.val()) * 2998);
+                }
+                setTotal();
+            })
+        </script>
+        <table cellpadding="0" cellspacing="0" class="gwc_tb2">
+            <tr>
+                <td class="tb2_td1"><input type="checkbox" value="1" name="newslist" id="newslist-2" /></td>
+                <td class="tb2_td2">
+                    <a href="#"><img src="../img/Cgbj0VzvRJmAOgyGAAPipjypbO0910.png120x120.jpg" /></a>
+                </td>
+                <td class="tb2_td3"><a href="#">魅族16th</a></td>
+                <td class="tb1_td4">1</td>
+                <td class="tb1_td5">
+                    <input id="min2" name="" style=" width:20px; height:18px;border:1px solid #ccc;" type="button" value="-" />
+                    <input id="text_box2" name="" type="text" value="1" style=" width:30px; text-align:center; border:1px solid #ccc;" />
+                    <input id="add2" name="" style=" width:20px; height:18px;border:1px solid #ccc;" type="button" value="+" />
+                </td>
+                <td class="tb1_td6"><label id="total2" class="tot" style="color:#ff5500;font-size:14px; font-weight:bold;"></label></td>
+                <td class="tb1_td7"><a href="#">删除</a></td>
+            </tr>
+        </table>
+
+        <!---总数---->
+        <script type="text/javascript">
+            $(function() {
+                $(".quanxun").click(function() {
+                    setTotal();
+                    //alert($(lens[0]).text());
+                });
+
+                function setTotal() {
+                    var len = $(".tot");
+                    var num = 0;
+                    for (var i = 0; i < len.length; i++) {
+                        num = parseInt(num) + parseInt($(len[i]).text());
+
+                    }
+                    //alert(len.length);
+                    $("#zong1").text(parseInt(num).toFixed(2));
+                    $("#shuliang").text(len.length);
+                }
+                //setTotal();
+            })
+        </script>
+        <table cellpadding="0" cellspacing="0" class="gwc_tb3">
+            <tr>
+                <td class="tb1_td1">&nbsp;</td>
+                <td class="tb1_td1">&nbsp;</td>
+                <td class="tb3_td1">&nbsp;</td>
+                <td class="tb3_td2">已选商品 <label id="shuliang" style="color:#ff5500;font-size:14px; font-weight:bold;">0</label> 件</td>
+                <td class="tb3_td3">合计(不含运费):<span>￥</span><span style=" color:#ff5500;"><label id="zong1" style="color:#ff5500;font-size:14px; font-weight:bold;"></label></span></td>
+                <td class="tb3_td4"><span id="jz1">结算</span><a href="#" style=" display:none;" class="jz2" id="jz2">结算</a></td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="footer-box" style="float: right;">
+        <div class="footer-wrap" style="float: left">
+            <ul class="meizu-service" style="float: right;
+						margin-left: 100px">
+                <li class="ser1 ser" style="float: left">
+                    <i class="iconfont icon-tianmaoshunfengbaoyou"></i>
+                    <p>满80免运费</p>
+                </li>
+                <li class="ser2 ser" style="float: left">
+                    <i class="iconfont icon-shandian-shi"></i>
+                    <p>100+城市次日送达</p>
+                </li>
+                <li class="ser3 ser" style="float: left">
+                    <i class="iconfont icon-baoguo_hezi_o
+								"></i>
+                    <p>7天无理由退货</p>
+                </li>
+                <li class="ser4 ser" style="float: left">
+                    <i class="iconfont icon-86"></i>
+                    <p>15天换货保障</p>
+                </li>
+                <li class="ser5 ser" style="float: left">
+                    <i class="iconfont icon-weixiuon
+									"></i>
+                    <p>1年免费保修</p>
+                </li>
+                <li class="ser6 ser" style="float: left">
+                    <i class="iconfont icon-icon-test"></i>
+                    <p>上门快修</p>
+                </li>
+                <li class="online-service" style="margin-left: 160px;
+							margin-top: 20px">
+                    <p class="p1">周一至周日 7:30-24:00</p>
+                    <p class="p2">400-788-3333</p>
+                    <p class="p3">在线客服</p>
+                </li>
+            </ul>
+            <ul class="meizu-service-bottom">
+
+                <li>
+                    <a href="#"> 了解魅族 </a>
+                    <span>|</span></li>
+
+                <li><a href="#">加入我们</a> <span>|</span></li>
+
+                <li><a href="#">Flyme</a><span>|</span></li>
+
+                <li><a href="#">魅族社区 </a><span>|</span></li>
+
+                <li><a href="#">天猫旗舰店</a><span>|</span> </li>
+
+                <li><a href="#">问题反馈</a><span>|</span></li>
+
+                <li><a href="#">线上销售授权名单公示</a> <span>|</span></li>
+
+                <li> <a href="#">出版物经营许可证</a><span>|</span></li>
+
+                <i><img  class="lazy" data-original="../img/67.jpg" alt="" style="width:18px;
+								height:18px;
+								border-radius:50%"></i>
+                <li>简体中文</li>
+
+            </ul>
+            <ul class="last" style="float: right;">
+                <li style="float: left">
+                    <p>
+                        ©2019 Meizu Telecom Equipment Co., Ltd. All rights reserved.
+                    </p>
+                    <p>粤ICP备13003602号</p>
+                    <p>合字B2-20170010 </p>
+                    <p>营业执照</p>
+                    <p>法律声明</p>
+                    <p>
+                        粤公网安备 44049102496009 号
+                    </p>
+                    <span>
+			 <i class="iconfont icon-xiaochengxu" style="margin:30px 0 0 0"></i>
+								<i class="iconfont icon-weixin"></i>
+								<i class="iconfont icon-qqkongjian"></i>
+								<i class="iconfont icon-weibo
+								"></i>
+							  
+		
+								</script>
+		</span>
+
+
+
+                </li>
+
+
+
+            </ul>
+
+
+        </div>
+
+    </div>
+
+
+</body>
+<script src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/magnifier.js"></script>
+<script src="../js/jquery.lazyload.min.js"></script>
+<script src="../js/jQselectable.js"></script>
+
+</html>
