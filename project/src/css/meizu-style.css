@@ -147,6 +147,11 @@ h3 {
     margin-top: 15px;
 }
 
+.ball a {
+    text-align: center;
+    vertical-align: middle
+}
+
 .ball-blue {
     width: 60px;
     height: 60px;

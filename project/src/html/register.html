@@ -96,16 +96,21 @@
         <div class="bg-box">
             <form action="get">
                 <div class="tab-title" style="margin-top: 20px">
-                    <a href="#" style="text-decoration: none">账号登陆</a>
-                    <span>|</span>
-                    <a href="#" style="text-decoration: none">二维码登录</a>
+                    <a href="#" style="text-decoration: none;color: #387aff">注册&nbsp; Flyme账号</a>
+                    <!-- <span>|</span>
+                    <a href="#" style="text-decoration: none">二维码登录</a> -->
                 </div>
-                <div class="input-box">
-                    <input type="text" class="in-account in-focus" name="account" maxlength="50" placeholder="手机号/Flyme账号" autocomplete="off" style="margin-top:20px">
+                <div class="input-box" style="color:#474747 ">
+                    <select name="phone" id="phone">
+							<option value="+86">+86</option>
+
+							<option value="常用">中国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+86</option>
+					</select>
+                    <input type="phone" class="in-account in-focus" name="account" maxlength="50" placeholder="手机号码" autocomplete="off" style="margin-top:20px">
                 </div>
-                <div class="password">
+                <!-- <div class="password">
                     <input type="password" class="in-focus" name="password" maxlength="16" autocomplete="off" placeholder="密码" style="margin-top:20px">
-                </div>
+                </div> -->
             </form>
             <div id="demo">
                 <div id="slider">
@@ -119,8 +124,8 @@
                         var slider = new SliderUnlock("#slider", {
                             successLabelTip: "验证成功"
                         }, function() {
-                            alert("验证成功,即将跳转至#");
-                            window.location.href = "#";
+                            alert("验证成功,即将跳转至登陆页面");
+                            window.location.href = "login.html";
                             //以下四行设置恢复初始，不需要可以删除
                             setTimeout(function() {
                                 $("#labelTip").html("拖动滑块验证");
@@ -133,12 +138,14 @@
                 </script>
             </div>
             <div class="checkbox">
-                <input type="checkbox"><b>记住登录状态</b>
+                <input type="checkbox"><b style="font-size: 12px;">注册账号即表示您同意并愿意遵守<i style="color: #387aff; ">Flyme服务协议，<br>法律声明</i>和<i  style="color: #387aff; ">隐私声明</i></b>
             </div>
-            <div class="denglu">登录</div>
+            <div class="denglu">
+                <input type="submit" class="login" value="立即注册" style="background:#387aff">
+            </div>
             <div class="zhuce">
-                <a href="#" style="text-decoration: none">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#" style="text-decoration: none">忘记密码?</a>
+                <a href="login.html" style="text-decoration: none">登录</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- <a href="#" style="text-decoration: none">忘记密码?</a> -->
             </div>
         </div>
 

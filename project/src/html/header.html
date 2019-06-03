@@ -24,7 +24,6 @@
             float: right;
             margin-right: 300px;
             background: #fff;
-            display: none;
         }
         
         .sub-nav li {
@@ -153,9 +152,15 @@
 <script src="../js/jquery.js"></script>
 <script>
     $(function() {
-        $('.phone').on('mousemove', function() {
-            $('.phone-sub').show()
-        })
+        var phonesub = document.querySelector('.phone-sub');
+        var phone = document.querySelector('.phone')
+        setTimeout($('.phone-sub').on('blur', function() {
+            $('.phone-sub').hide(1000)
+        }), 1000)
+        clearTimeout($('.phone').on('mousemove', function() {
+            $('.phone-sub').show(1000)
+        }), 1000)
+
     })
 </script>
 
