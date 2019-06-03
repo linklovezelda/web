@@ -66,11 +66,13 @@
 
 .sencond-nav .sub,
 .sencond-nav .sub-app {
-    display: none
+    display: none;
+    transition-delay: 1s;
 }
 
 .sencond-nav:hover .sub,
 .sencond-nav:hover .sub-app {
+    transition-delay: 1s;
     display: block;
 }
 

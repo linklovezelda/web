@@ -52,6 +52,8 @@
         }
         
         #demo {
+            width: 278px;
+            height: 80px;
             position: absolute;
             top: 200px;
             left: 1020px
@@ -74,7 +76,8 @@
             margin: 0 auto;
             text-align: center;
             vertical-align: middle;
-            border-radius: 5px
+            border-radius: 5px;
+            color: #fff
         }
         
         .zhuce {
@@ -94,7 +97,7 @@
     </div>
     <div class="banner-box">
         <div class="bg-box">
-            <form action="denglu.php">
+            <form action="denglu.php" method="POST">
                 <div class="tab-title" style="margin-top: 20px">
                     <a href="#" style="text-decoration: none">账号登陆</a>
                     <span>|</span>
@@ -112,67 +115,68 @@
 
 
 
-            </form>
-            <div id="demo">
-                <div id="slider">
-                    <div id="slider_bg"></div>
-                    <span id="label">>></span> <span id="labelTip">拖动滑块验证</span>
-                </div>
-                <script src="../js/jquery.js"></script>
-                <script type="text/javascript" src="../js/jquery.slideunlock.js"></script>
-                <script>
-                    $(function() {
-                        var slider = new SliderUnlock("#slider", {
-                            successLabelTip: "验证成功"
-                        }, function() {
-                            alert("验证成功,即将跳转至首页");
-                            window.location.href = "beta.html";
-                            //以下四行设置恢复初始，不需要可以删除
-                            setTimeout(function() {
-                                $("#labelTip").html("拖动滑块验证");
-                                $("#labelTip").css("color", "#787878");
-                            }, 2000);
+                <!-- </form> -->
+                <div id="demo">
+                    <div id="slider">
+                        <div id="slider_bg"></div>
+                        <span id="label">>></span> <span id="labelTip">拖动滑块验证</span>
+                    </div>
+                    <script src="../js/jquery.js"></script>
+                    <script type="text/javascript" src="../js/jquery.slideunlock.js"></script>
+                    <script>
+                        $(function() {
+                            var slider = new SliderUnlock("#slider", {
+                                successLabelTip: "验证成功"
+                            }, function() {
+                                alert("验证成功,即将跳转至首页");
+                                window.location.href = "beta.html";
+                                //以下四行设置恢复初始，不需要可以删除
+                                setTimeout(function() {
+                                    $("#labelTip").html("拖动滑块验证");
+                                    $("#labelTip").css("color", "#787878");
+                                }, 2000);
+                                slider.init();
+                            });
                             slider.init();
-                        });
-                        slider.init();
-                    })
-                </script>
-                <script>
-                    $(function() {
-                        // var account = document.querySelector('.in-account');
-                        // var password = document.querySelector('.in-password');
-                        // var btn = document.querySelector('.denglu');
-                        // denglu.onclick = function() {
-                        var account = document.querySelector('.in-account');
-                        var xhr = new XMLHttpRequest();
-                        xhr.open('post', '../php/login.php', true);
-                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                        xhr.send('usename=' + this.value);
-                        xhr.onreadystatechange = function() {
-                            if (xhr.readyState == 4 && xhr.status == 200) {
-                                var data = JSON.parse(xhr.responseText);
-                                has.innerHTML = data.msg;
+                        })
+                    </script>
+                    <script>
+                        $(function() {
+                            // var account = document.querySelector('.in-account');
+                            // var password = document.querySelector('.in-password');
+                            // var btn = document.querySelector('.denglu');
+                            // denglu.onclick = function() {
+                            var account = document.querySelector('.in-account');
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('post', '../php/login.php', true);
+                            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                            xhr.send('usename=' + this.value);
+                            xhr.onreadystatechange = function() {
+                                if (xhr.readyState == 4 && xhr.status == 200) {
+                                    var data = JSON.parse(xhr.responseText);
+                                    has.innerHTML = data.msg;
+                                }
                             }
+
                         }
 
-                    }
-
-                    })
-                </script>
-            </div>
-            <div class="checkbox">
-                <input type="checkbox"><b>记住登录状态</b>
-            </div>
-            <div class="denglu">
-                <input type="submit" value="登录" style="background:#387aff">
-            </div>
-            <div class="zhuce">
-                <a href="register.html" style="text-decoration: none">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#" style="text-decoration: none">忘记密码?</a>
-            </div>
+                        })
+                    </script>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox"><b>记住登录状态</b>
+                </div>
+                <div>
+                    <input type="submit" value="登录" style="background:#387aff" class="denglu">
+                </div>
+                <div class="zhuce">
+                    <a href="register.html" style="text-decoration: none">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#" style="text-decoration: none">忘记密码?</a>
+                </div>
         </div>
 
     </div>
+    </form>
     <div class="footer-box" style="float: right">
         <div class="footer-wrap" style="float: left">
             <ul class="meizu-service" style="float: right;
