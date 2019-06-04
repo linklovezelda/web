@@ -1,12 +1,27 @@
 <?php
-include('register-succful.php')
-$user=$_REQUEST['in-account'];
-$password=$_REQUEST['in-password'];
-$sql ="select * from reg where username=$user' and password='$password'";
+
+include('conn.php');
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+
+$sql = "select * from reg where usename='$username'";
+// echo $sql;
 $result = $mysqli->query($sql);
-if ($result->num_rows>0){
-	echo"<script>alert('登陆成功，点击跳转');location.href='beta.html';<script>";
-}else{
-	echo"<script> alert('登陆失败，点击跳转');location.href='login.html';<script>"
+// var_dump($result);
+// echo $result->num_rows;
+if($result->num_rows>0){
+	die('用户已存在');
 }
+
+$insertSql = "insert into reg(username,password)values('$username','$password')";
+
+$res = $mysqli->query($insertSql);
+// var_dump($res);
+if($res){
+	echo '<script>alert("注册成功，跳转登录页面");location.href="../html/login.html";</script>';
+}
+
+$mysqli->close();  //关闭连接
 ?>

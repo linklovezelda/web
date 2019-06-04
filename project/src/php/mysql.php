@@ -1,14 +1,14 @@
 <?php
 header("content-type:text/html;charset=utf-8");
 $mysql_conf=array(
-	'host'=>'localhost:8080',
+	'host'=>'localhost:3306',
 	'db_user'=>'root',
 	'db_pwd'=>'',
 	'db'=>'register'
 );
 $mysql=@new mysql($mysql_conf['host'],$mysql_conf['db_user'],$mysql_conf['db_pwd']);
 if($mysql->connect_errno){
-	die('连接错误'.$mysql->connect_errno);
+	die('连接错误，快去检查代码吧'.$mysql->connect_errno);
 
 }
 $mysqli->query("set names 'utf8';"); 
